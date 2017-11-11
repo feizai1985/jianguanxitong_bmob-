@@ -31,7 +31,12 @@
         <activity android:name=".GYQYActivity" />
         <activity android:name=".gyqy.GYQYAddActivity" />
         <activity android:name=".gyqy.GYQYQueryActivity" />
-        <activity android:name=".gyqy.GYQYAlertActivity"></activity>
+        <activity android:name=".gyqy.GYQYAlertActivity" />
+        <activity android:name=".BZGFActivity" />
+        <activity android:name=".bzgf.CPBZActivity" />
+        <activity android:name=".bzgf.XCActivity" />
+        <activity android:name=".bzgf.JDCCActivity" />
+        <activity android:name=".bzgf.ShowItemActivity"></activity>
     </application>
 
 </manifest>

@@ -23,6 +23,7 @@ public class DaoHangActivity extends AppCompatActivity implements View.OnClickLi
     private Button bt_spxg;
     private Button bt_flfg;
     private Context mContext;
+    private Button bt_bzgf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class DaoHangActivity extends AppCompatActivity implements View.OnClickLi
         bt_spxg.setOnClickListener(this);
         bt_gyqy.setOnClickListener(this);
         bt_hzqy.setOnClickListener(this);
+        bt_bzgf.setOnClickListener(this);
     }
 
     private void findview() {
@@ -44,6 +46,7 @@ public class DaoHangActivity extends AppCompatActivity implements View.OnClickLi
         bt_gyqy = (Button) findViewById(R.id.bt_gyqy);
         bt_spxg = (Button) findViewById(R.id.bt_spxg);
         bt_flfg = (Button) findViewById(R.id.bt_flfg);
+        bt_bzgf = (Button) findViewById(R.id.bt_bzgf);
     }
 
     @Override
@@ -57,6 +60,9 @@ public class DaoHangActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.bt_spxg:
                 startYeMian( R.id.bt_spxg);
+                break;
+            case R.id.bt_bzgf:
+                startYeMian( R.id.bt_bzgf);
                 break;
             case R.id.bt_flfg:
                 startYeMian( R.id.bt_flfg);
@@ -81,6 +87,10 @@ public class DaoHangActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.bt_spxg:
                 intent.setClass(this,ShiPingXiangGuanActivity.class);
+
+                break;
+            case R.id.bt_bzgf:
+                intent.setClass(this,BZGFActivity.class);
 
                 break;
             case R.id.bt_flfg:
