@@ -16,6 +16,8 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
+import cn.bmob.v3.Bmob;
+
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,6 +31,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         findview();
         bt_login.setOnClickListener(this);
 //        判断是否以前记录密码
@@ -92,4 +95,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             edit.commit();
         }
     }
+
+
 }

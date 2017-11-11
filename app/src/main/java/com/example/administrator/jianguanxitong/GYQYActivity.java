@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.jianguanxitong.bean.GYQYBean;
-import com.example.administrator.jianguanxitong.bean.SPXGBean;
 import com.example.administrator.jianguanxitong.gyqy.GYQYAddActivity;
 import com.example.administrator.jianguanxitong.gyqy.GYQYAlertActivity;
 import com.example.administrator.jianguanxitong.gyqy.GYQYQueryActivity;
@@ -25,40 +24,40 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
-public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class GYQYActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
-    private static List<SPXGBean> list;
-    private ListView spxg_lv_item;
-    private Button spxg_bt_add;
-    private Button spxg_bt_query;
-    private Button spxg_bt_fanhui;
     private Context mContext;
+    private ListView gyqy_lv_item;
+    private Button gyqy_bt_add;
+    private Button gyqy_bt_query;
+    private Button gyqy_bt_fanhui;
+    private static List<GYQYBean> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shi_ping_xiang_guan);
+        setContentView(R.layout.activity_gyqy);
         mContext = this;
         findview();
-        spxg_bt_add.setOnClickListener(this);
-        spxg_lv_item.setOnItemClickListener(this);
-        spxg_bt_query.setOnClickListener(this);
-        spxg_bt_fanhui.setOnClickListener(this);
+        gyqy_bt_add.setOnClickListener(this);
+        gyqy_lv_item.setOnItemClickListener(this);
+        gyqy_bt_query.setOnClickListener(this);
+        gyqy_bt_fanhui.setOnClickListener(this);
         showItem();
     }
 
     private void showItem() {
-        BmobQuery<SPXGBean> bmobQuery=new BmobQuery<>();
+        BmobQuery<GYQYBean> bmobQuery=new BmobQuery<>();
 
-        bmobQuery.findObjects(new FindListener<SPXGBean>() {
+        bmobQuery.findObjects(new FindListener<GYQYBean>() {
             @Override
-            public void done(List<SPXGBean> list, BmobException e) {
+            public void done(List<GYQYBean> list, BmobException e) {
                 if(e!=null){
                     Toast.makeText(mContext,"加载数据失败"+e.getMessage(),Toast.LENGTH_LONG).show();
                 }else {
-                    spxg_lv_item.setAdapter(new MyHZQEAdapter(list));
+                    gyqy_lv_item.setAdapter(new MyHZQEAdapter(list));
 
-                    ShiPingXiangGuanActivity.list=list;
+                    GYQYActivity.list=list;
                 }
 
             }
@@ -66,27 +65,25 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
     }
 
     private void findview() {
-        spxg_lv_item = (ListView) findViewById(R.id.spxg_lv_item);
-        spxg_bt_add = (Button) findViewById(R.id.spxg_bt_add);
-        spxg_bt_query = (Button) findViewById(R.id.spxg_bt_query);
-        spxg_bt_fanhui = (Button) findViewById(R.id.spxg_bt_fanhui);
+        gyqy_lv_item = (ListView) findViewById(R.id.gyqy_lv_item);
+        gyqy_bt_add = (Button) findViewById(R.id.gyqy_bt_add);
+        gyqy_bt_query = (Button) findViewById(R.id.gyqy_bt_query);
+        gyqy_bt_fanhui = (Button) findViewById(R.id.gyqy_bt_fanhui);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
 //       添加企业
-            case R.id.spxg_bt_add:
+            case R.id.gyqy_bt_add:
                 Intent intent=new Intent(this, GYQYAddActivity.class);
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.spxg_bt_fanhui:
-                Intent intent1=new Intent(this, DaoHangActivity.class);
-                startActivity(intent1);
+            case R.id.gyqy_bt_fanhui:
                 finish();
                 break;
-            case R.id.spxg_bt_query:
+            case R.id.gyqy_bt_query:
                 Intent intent2=new Intent(this, GYQYQueryActivity.class);
                 startActivity(intent2);
                 finish();
@@ -98,7 +95,7 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent=new Intent(ShiPingXiangGuanActivity.this, GYQYAlertActivity.class);
+        Intent intent=new Intent(GYQYActivity.this, GYQYAlertActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("xinxi",list.get(position));
         intent.putExtras(bundle);
@@ -108,9 +105,9 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
     class MyHZQEAdapter extends BaseAdapter {
 
 
-        private final List<SPXGBean> list;
+        private final List<GYQYBean> list;
 
-        public MyHZQEAdapter(List<SPXGBean> list)  {
+        public MyHZQEAdapter(List<GYQYBean> list)  {
             this.list=list;
         }
 
@@ -144,4 +141,3 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
         }
     }
 }
-
