@@ -131,7 +131,7 @@ public class GYQYAlertActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.gyqyalert_bt_delete:
                 new AlertDialog.Builder(this)
-                        .setTitle("确定退出程序么")
+                        .setTitle("确定删除吗")
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

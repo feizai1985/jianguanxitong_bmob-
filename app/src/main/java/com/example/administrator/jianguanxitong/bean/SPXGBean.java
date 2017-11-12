@@ -13,6 +13,14 @@ public class SPXGBean   extends BmobObject implements Serializable {
     public String adress2;
     public String frdb;
     public String lxr;
+    public String zw;
+    public String telephone;
+    public String cpmc;
+    public String cpbz;
+    public String cpfl;
+    public String sczk;
+    public String jd;
+    public String bate;
 
     public String getBate() {
         return bate;
@@ -118,12 +126,5 @@ public class SPXGBean   extends BmobObject implements Serializable {
         this.name = name;
     }
 
-    public String zw;
-    public String telephone;
-    public String cpmc;
-    public String cpbz;
-    public String cpfl;
-    public String sczk;
-    public String jd;
-    public String bate;
+
 }

@@ -23,7 +23,7 @@
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/bzgf_bt_jdcc"
-        android:text="监督抽查细则"
+        android:text="监督抽查规范"
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

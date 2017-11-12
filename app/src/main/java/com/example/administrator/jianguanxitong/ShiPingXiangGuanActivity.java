@@ -13,11 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.administrator.jianguanxitong.bean.GYQYBean;
 import com.example.administrator.jianguanxitong.bean.SPXGBean;
-import com.example.administrator.jianguanxitong.gyqy.GYQYAddActivity;
-import com.example.administrator.jianguanxitong.gyqy.GYQYAlertActivity;
-import com.example.administrator.jianguanxitong.gyqy.GYQYQueryActivity;
+import com.example.administrator.jianguanxitong.spxg.SPXGAddActivity;
+import com.example.administrator.jianguanxitong.spxg.SPXGAlertActivity;
 
 import java.util.List;
 
@@ -30,7 +28,7 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
     private static List<SPXGBean> list;
     private ListView spxg_lv_item;
     private Button spxg_bt_add;
-    private Button spxg_bt_query;
+
     private Button spxg_bt_fanhui;
     private Context mContext;
 
@@ -42,7 +40,7 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
         findview();
         spxg_bt_add.setOnClickListener(this);
         spxg_lv_item.setOnItemClickListener(this);
-        spxg_bt_query.setOnClickListener(this);
+
         spxg_bt_fanhui.setOnClickListener(this);
         showItem();
     }
@@ -68,7 +66,7 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
     private void findview() {
         spxg_lv_item = (ListView) findViewById(R.id.spxg_lv_item);
         spxg_bt_add = (Button) findViewById(R.id.spxg_bt_add);
-        spxg_bt_query = (Button) findViewById(R.id.spxg_bt_query);
+
         spxg_bt_fanhui = (Button) findViewById(R.id.spxg_bt_fanhui);
     }
 
@@ -77,7 +75,7 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
         switch (v.getId()){
 //       添加企业
             case R.id.spxg_bt_add:
-                Intent intent=new Intent(this, GYQYAddActivity.class);
+                Intent intent=new Intent(this, SPXGAddActivity.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -86,11 +84,7 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
                 startActivity(intent1);
                 finish();
                 break;
-            case R.id.spxg_bt_query:
-                Intent intent2=new Intent(this, GYQYQueryActivity.class);
-                startActivity(intent2);
-                finish();
-                break;
+
             default:
                 break;
         }
@@ -98,7 +92,7 @@ public class ShiPingXiangGuanActivity extends AppCompatActivity implements View.
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent=new Intent(ShiPingXiangGuanActivity.this, GYQYAlertActivity.class);
+        Intent intent=new Intent(ShiPingXiangGuanActivity.this, SPXGAlertActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("xinxi",list.get(position));
         intent.putExtras(bundle);
