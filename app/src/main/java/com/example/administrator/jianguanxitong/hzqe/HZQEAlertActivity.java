@@ -158,15 +158,6 @@ public class HZQEAlertActivity extends AppCompatActivity implements View.OnClick
                             }
 
                         }).show();
-
-
-
-
-
-
-
-
-
                 break;
              default:
                  break;
