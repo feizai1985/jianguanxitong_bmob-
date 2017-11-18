@@ -78,10 +78,19 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         String str_password = et_password.getText().toString();
         if(str_username.equals(getString(R.string.username))&&str_password.equals(getString(R.string.password))){
             Intent intent = new Intent(mContext,DaoHangActivity.class);
+            //        初始化Bmob
+            Bmob.initialize(this, "bc227182859550b1fc700846c8c6938e");
             startActivity(intent);
             cbifrem(str_username,str_password);
             finish();
-        }else {
+        }else if(str_username.equals(getString(R.string.testusername))&&str_password.equals(getString(R.string.testpassword))){
+            Intent intent = new Intent(mContext,DaoHangActivity.class);
+            //        初始化Bmob
+            Bmob.initialize(this, "9220daa7b50f9b7a2f72cb3f3649f40f");
+            startActivity(intent);
+            cbifrem(str_username,str_password);
+            finish();
+        }else{
             Toast.makeText(mContext,"用户名或密码输入错误",Toast.LENGTH_SHORT).show();
         }
     }

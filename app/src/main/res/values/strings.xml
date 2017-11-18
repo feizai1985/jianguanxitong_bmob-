@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">"产品质量监督"</string>
-    <string name="username">zljd</string>
+    <string name="username">fnzljd</string>
     <string name="password">8080723</string>
-
+    <string name="testusername">zljd</string>
+    <string name="testpassword">12345678</string>
 
 </resources>

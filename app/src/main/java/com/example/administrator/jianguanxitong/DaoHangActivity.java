@@ -31,8 +31,7 @@ public class DaoHangActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_dao_hang);
 
         mContext = this;
-//        初始化Bmob
-        Bmob.initialize(this, "bc227182859550b1fc700846c8c6938e");
+
         findview();
         bt_flfg.setOnClickListener(this);
         bt_spxg.setOnClickListener(this);
