@@ -45,8 +45,8 @@ public class DaoHangActivity extends AppCompatActivity implements View.OnClickLi
         bt_hzqy = (Button) findViewById(R.id.bt_hzqy);
         bt_gyqy = (Button) findViewById(R.id.bt_gyqy);
         bt_spxg = (Button) findViewById(R.id.bt_spxg);
-        bt_flfg = (Button) findViewById(R.id.bt_flfg);
-        bt_bzgf = (Button) findViewById(R.id.bt_bzgf);
+        bt_flfg = (Button) findViewById(R.id.bt_zlcx);
+        bt_bzgf = (Button) findViewById(R.id.bt_zlts);
     }
 
     @Override
@@ -61,11 +61,11 @@ public class DaoHangActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.bt_spxg:
                 startYeMian( R.id.bt_spxg);
                 break;
-            case R.id.bt_bzgf:
-                startYeMian( R.id.bt_bzgf);
+            case R.id.bt_zlts:
+                startYeMian( R.id.bt_zlts);
                 break;
-            case R.id.bt_flfg:
-                startYeMian( R.id.bt_flfg);
+            case R.id.bt_zlcx:
+                startYeMian( R.id.bt_zlcx);
                 break;
             default:
                 break;
@@ -89,12 +89,12 @@ public class DaoHangActivity extends AppCompatActivity implements View.OnClickLi
                 intent.setClass(this,ShiPingXiangGuanActivity.class);
 
                 break;
-            case R.id.bt_bzgf:
-                intent.setClass(this,BZGFActivity.class);
+            case R.id.bt_zlts:
+                intent.setClass(this,ZLTSActivity.class);
 
                 break;
-            case R.id.bt_flfg:
-                intent.setClass(this,FaLvFaGuiActivity.class);
+            case R.id.bt_zlcx:
+                intent.setClass(this,ZLXCActivity.class);
 
                 break;
             default:

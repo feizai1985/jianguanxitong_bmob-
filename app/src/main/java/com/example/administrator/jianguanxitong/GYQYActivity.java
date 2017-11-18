@@ -30,7 +30,7 @@ public class GYQYActivity extends AppCompatActivity implements View.OnClickListe
     private ListView gyqy_lv_item;
     private Button gyqy_bt_add;
     private Button gyqy_bt_query;
-    private Button gyqy_bt_fanhui;
+
     private static List<GYQYBean> list;
 
     @Override
@@ -42,19 +42,21 @@ public class GYQYActivity extends AppCompatActivity implements View.OnClickListe
         gyqy_bt_add.setOnClickListener(this);
         gyqy_lv_item.setOnItemClickListener(this);
         gyqy_bt_query.setOnClickListener(this);
-        gyqy_bt_fanhui.setOnClickListener(this);
+
         showItem();
     }
 
     private void showItem() {
         BmobQuery<GYQYBean> bmobQuery=new BmobQuery<>();
-
+        bmobQuery.setLimit(499);
         bmobQuery.findObjects(new FindListener<GYQYBean>() {
             @Override
             public void done(List<GYQYBean> list, BmobException e) {
                 if(e!=null){
+
                     Toast.makeText(mContext,"加载数据失败"+e.getMessage(),Toast.LENGTH_LONG).show();
                 }else {
+                    
                     gyqy_lv_item.setAdapter(new MyHZQEAdapter(list));
 
                     GYQYActivity.list=list;
@@ -68,7 +70,7 @@ public class GYQYActivity extends AppCompatActivity implements View.OnClickListe
         gyqy_lv_item = (ListView) findViewById(R.id.gyqy_lv_item);
         gyqy_bt_add = (Button) findViewById(R.id.gyqy_bt_add);
         gyqy_bt_query = (Button) findViewById(R.id.gyqy_bt_query);
-        gyqy_bt_fanhui = (Button) findViewById(R.id.gyqy_bt_fanhui);
+
     }
 
     @Override
@@ -80,13 +82,11 @@ public class GYQYActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.gyqy_bt_fanhui:
-                finish();
-                break;
+
             case R.id.gyqy_bt_query:
                 Intent intent2=new Intent(this, GYQYQueryActivity.class);
                 startActivity(intent2);
-                finish();
+
                 break;
             default:
                 break;
@@ -100,6 +100,7 @@ public class GYQYActivity extends AppCompatActivity implements View.OnClickListe
         bundle.putSerializable("xinxi",list.get(position));
         intent.putExtras(bundle);
         startActivity(intent);
+        finish();
     }
 
     class MyHZQEAdapter extends BaseAdapter {

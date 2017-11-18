@@ -72,7 +72,6 @@ public class HZQEAddActivity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()){
             case R.id.hzqe_bt_cancle:
                 finish();
-
                 break;
             case R.id.hzqe_bt_save:
                 HZQEBean bean = new HZQEBean();
@@ -100,7 +99,7 @@ public class HZQEAddActivity extends AppCompatActivity implements View.OnClickLi
                     }
                 });
                 finish();
-                startActivity(new Intent(this, HuoZhengActivity.class));
+
                 break;
             case R.id.gyqy_bt_query:
 

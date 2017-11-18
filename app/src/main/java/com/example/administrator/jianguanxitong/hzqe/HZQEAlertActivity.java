@@ -123,7 +123,7 @@ public class HZQEAlertActivity extends AppCompatActivity implements View.OnClick
                     }
                 });
                 finish();
-                startActivity(new Intent(HZQEAlertActivity.this, HuoZhengActivity.class));
+
                 break;
             case R.id.hzqealert_bt_cancle:
                 finish();
@@ -153,7 +153,7 @@ public class HZQEAlertActivity extends AppCompatActivity implements View.OnClick
                                     }
                                 });
                                 finish();
-                                startActivity(new Intent(HZQEAlertActivity.this, HuoZhengActivity.class));
+
 
                             }
 

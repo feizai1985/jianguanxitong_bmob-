@@ -8,20 +8,19 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.example.administrator.jianguanxitong.HuoZhengActivity">
-<ListView
-    android:id="@+id/hzqe_lv_item"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="6">
+    tools:context="com.example.administrator.jianguanxitong.ZLTSActivity">
 
-</ListView>
     <Button
-        android:id="@+id/hzqe_bt_add"
-        android:text="添加企业"
-        android:textSize="20sp"
+        android:id="@+id/zlts_bt_fxjcd"
+        android:textSize="30sp"
+        android:text="消费品监测点"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/zlts_bt_jdjc"
+        android:text="监督检查记录"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.administrator.jianguanxitong.bzgf;
+package com.example.administrator.jianguanxitong;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

@@ -26,12 +26,14 @@ import cn.bmob.v3.listener.FindListener;
 
 public class GYQYQueryActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
-    private Button gyqyquery_bt_fanhui;
+
     private Button gyqyquery_bt_query;
     private ListView gyqyquery_lv_query;
     private Context mContext;
     private EditText gyqyquery_et_query;
     private static List<GYQYBean> list;
+    private EditText gyqyquery_et_querycpmc;
+    private Button gyqyquery_bt_querycpmc;
 
 
     @Override
@@ -40,31 +42,30 @@ public class GYQYQueryActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_gyqyquery2);
         mContext = this;
         findView();
-        gyqyquery_bt_fanhui.setOnClickListener(this);
+
         gyqyquery_bt_query.setOnClickListener(this);
+        gyqyquery_bt_querycpmc.setOnClickListener(this);
         gyqyquery_lv_query.setOnItemClickListener(this);
     }
 
     private void findView() {
-        gyqyquery_bt_fanhui = (Button) findViewById(R.id.gyqyquery_bt_fanhui);
+
         gyqyquery_bt_query = (Button) findViewById(R.id.gyqyquery_bt_query);
         gyqyquery_lv_query = (ListView) findViewById(R.id.gyqyquery_lv_query);
         gyqyquery_et_query = (EditText) findViewById(R.id.gyqyquery_et_query);
-
+        gyqyquery_et_querycpmc = (EditText) findViewById(R.id.gyqyquery_et_querycpmc);
+        gyqyquery_bt_querycpmc = (Button) findViewById(R.id.gyqyquery_bt_querycpmc);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.gyqyquery_bt_fanhui:
 
-                finish();
-                break;
             case R.id.gyqyquery_bt_query:
                 if(gyqyquery_et_query.getText().toString().trim()!=""){
                     BmobQuery<GYQYBean> bmobQuery=new BmobQuery<>();
                     bmobQuery.addWhereEqualTo("adress1", gyqyquery_et_query.getText().toString().trim());
-                    bmobQuery.setLimit(50);
+                    bmobQuery.setLimit(499);
                     bmobQuery.findObjects(new FindListener<GYQYBean>() {
                         @Override
                         public void done(List<GYQYBean> list, BmobException e) {
@@ -73,6 +74,24 @@ public class GYQYQueryActivity extends AppCompatActivity implements View.OnClick
                             }else {
                                 GYQYQueryActivity.list=list;
 
+                                gyqyquery_lv_query.setAdapter(new MyHZQEAdapter(list));
+                            }
+                        }
+                    });
+                }
+                break;
+            case R.id.gyqyquery_bt_querycpmc:
+                if(gyqyquery_et_querycpmc.getText().toString().trim()!=""){
+                    BmobQuery<GYQYBean> bmobQuery=new BmobQuery<>();
+                    bmobQuery.addWhereEqualTo("cpmc", gyqyquery_et_querycpmc.getText().toString().trim());
+                    bmobQuery.setLimit(50);
+                    bmobQuery.findObjects(new FindListener<GYQYBean>() {
+                        @Override
+                        public void done(List<GYQYBean> list, BmobException e) {
+                            if(e!=null){
+                                Toast.makeText(mContext,"查询数据失败"+e.getMessage(),Toast.LENGTH_LONG).show();
+                            }else {
+                                GYQYQueryActivity.list=list;
                                 gyqyquery_lv_query.setAdapter(new MyHZQEAdapter(list));
                             }
                         }

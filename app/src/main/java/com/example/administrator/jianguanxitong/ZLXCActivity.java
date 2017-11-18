@@ -1,4 +1,4 @@
-package com.example.administrator.jianguanxitong.bzgf;
+package com.example.administrator.jianguanxitong;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,33 +11,41 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.administrator.jianguanxitong.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class JDCCActivity extends AppCompatActivity {
+public class ZLXCActivity extends AppCompatActivity {
 
-    private ListView bzgf_lv_jdcc;
     private Context mContext;
     private List<String> list;
     private List<String> list2;
+    private ListView fvfg_lv_item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jdcc);
+        setContentView(R.layout.activity_fa_lv_fa_gui);
+
         mContext = this;
 //list 与list2为一一对应关系
+
         list = new ArrayList<>();
         list2 = new ArrayList<>();
 //        加载数据：0产品质量安全法、
 
-        list.add("砂浆监督抽查细则");
-        list2.add("sjxz");
-        bzgf_lv_jdcc = (ListView) findViewById(R.id.bzgf_lv_jdcc);
-        bzgf_lv_jdcc.setAdapter(new myAdapter());
-        bzgf_lv_jdcc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        list.add("产品质量安全法");    list2.add("cpzlaqf");
+        list.add("工业产品生产许可证管理条例");   list2.add("gycpgltl");
+        list.add("工业产品生产许可证管理条例实施办法");   list2.add("gycpgltlssbf");
+        list.add("工业产品生产许可证目录");   list2.add("ml");
+        list.add("产品质量监督抽查管理办法");    list2.add("jdccglbf");
+        list.add("行政强制法");   list2.add("xzqzf");
+        list.add("行政处罚法");   list2.add("xzcff");
+        list.add("行政诉讼法");    list2.add("xzsof");
+
+
+        fvfg_lv_item = (ListView) findViewById(R.id.fvfg_lv_item);
+        fvfg_lv_item.setAdapter(new myAdapter());
+        fvfg_lv_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -77,8 +85,12 @@ public class JDCCActivity extends AppCompatActivity {
                 view=new TextView(mContext);
             }
             view.setText(list.get(position));
+            view.setTextSize(23);
 
             return view;
         }
     }
 }
+
+
+

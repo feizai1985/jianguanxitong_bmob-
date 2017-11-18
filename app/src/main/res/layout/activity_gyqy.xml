@@ -37,10 +37,5 @@
    </LinearLayout>
 
 
-    <Button
-        android:id="@+id/gyqy_bt_fanhui"
-        android:text="返回"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"/>
+
 </LinearLayout>

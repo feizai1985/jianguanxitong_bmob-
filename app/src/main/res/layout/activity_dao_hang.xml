@@ -32,14 +32,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
-        android:id="@+id/bt_bzgf"
+        android:id="@+id/bt_zlts"
         android:paddingTop="20dp"
         android:text="质量提升"
         android:textSize="40sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
-        android:id="@+id/bt_flfg"
+        android:id="@+id/bt_zlcx"
         android:paddingTop="20dp"
         android:text="资料查询"
         android:textSize="40sp"

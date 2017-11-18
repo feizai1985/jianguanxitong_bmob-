@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    android:fadingEdge="vertical">
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:scrollbars="vertical"
+android:fadingEdge="vertical">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,43 +21,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="企业名称："
+            android:text="名称："
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/gyqyalert_et_name"
+            android:id="@+id/fxjcd_et_name"
             android:layout_width="0dp"
             android:layout_weight="7"
             android:layout_height="wrap_content" />
     </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:text="地址(乡镇）："
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/gyqyalert_et_adress1"
-            android:layout_width="0dp"
-            android:layout_weight="7"
 
-            android:layout_height="wrap_content" />
-    </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="详细地址："
+            android:text="地址："
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/gyqyalert_et_adress2"
+            android:id="@+id/fxjcd_et_adress"
             android:layout_width="0dp"
             android:layout_weight="7"
 
@@ -68,38 +53,43 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:text="法人代表："
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/gyqyalert_et_frdb"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content" />
         <TextView
             android:text="联系人："
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/gyqyalert_et_lxr"
+            android:id="@+id/fxjcd_et_lxr"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="电话："
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/fxjcd_et_lxrtelephone"
             android:layout_width="0dp"
             android:layout_weight="5"
             android:layout_height="wrap_content" />
     </LinearLayout>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-----------------监测员信息---------------"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="职  务："
+            android:text="姓名："
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/gyqyalert_et_zw"
+            android:id="@+id/fxjcd_et_jcyname1"
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content" />
@@ -109,7 +99,7 @@
             android:layout_weight="2"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/gyqyalert_et_telephone"
+            android:id="@+id/fxjcd_et_jcytelephone1"
             android:layout_width="0dp"
             android:layout_weight="5"
             android:layout_height="wrap_content" />
@@ -119,72 +109,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="产品名称："
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/gyqyalert_et_cpmc"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:text="产品标准："
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/gyqyalert_et_cpbz"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:text="产品分类："
+            android:text="姓名："
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/gyqyalert_et_cpfl"
+            android:id="@+id/fxjcd_et_jcyname2"
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content" />
-
-
-
         <TextView
-            android:text="是否建档："
+            android:text="电  话："
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/gyqyalert_et_jd"
+            android:id="@+id/fxjcd_et_jcytelephone2"
             android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:text="生产状况："
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/gyqyalert_et_sczk"
-            android:layout_width="wrap_content"
             android:layout_weight="5"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -193,40 +134,56 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-
-            android:text="备    注："
+            android:text="姓名："
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="wrap_content" />
         <EditText
-            android:singleLine="false"
-            android:id="@+id/gyqyalert_et_bate"
+            android:id="@+id/fxjcd_et_jcyname3"
             android:layout_width="0dp"
-            android:layout_weight="4"
+            android:layout_weight="3"
             android:layout_height="wrap_content" />
-        />
+        <TextView
+            android:text="电  话："
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/fxjcd_et_jcytelephone3"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content" />
     </LinearLayout>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <Button
-            android:id="@+id/gyqyalert_bt_save"
-            android:text="保存修改"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="备注："
             android:layout_width="0dp"
-            android:layout_weight="1"
+           android:layout_weight="1"
             android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/gyqyalert_bt_delete"
-            android:text="删除企业"
+        <EditText
+            android:id="@+id/fxjcd_et_bate"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="5"
             android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+         <Button
+             android:id="@+id/fxjcd_bt_save"
+             android:text="保存修改"
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/gyqyalert_bt_cancle"
-            android:text="取消"
+            android:id="@+id/fxjcd_bt_delete"
+            android:text="删除监测点"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content" />

@@ -1,4 +1,4 @@
-package com.example.administrator.jianguanxitong;
+package com.example.administrator.jianguanxitong.zlts;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.administrator.jianguanxitong.R;
+import com.example.administrator.jianguanxitong.bean.FXJCDBean;
+import com.example.administrator.jianguanxitong.bean.FXJCDBean;
 import com.example.administrator.jianguanxitong.bean.HZQEBean;
 import com.example.administrator.jianguanxitong.hzqe.HZQEAddActivity;
 import com.example.administrator.jianguanxitong.hzqe.HZQEAlertActivity;
@@ -23,25 +26,25 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
-public class HuoZhengActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class FXJCDActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
+    private static List<FXJCDBean> list;
     private Context mConotext;
-    private ListView hzqe_lv_item;
-    private Button hzqe_bt_add;
-    public static List<HZQEBean> list;
-    private Button hzqe_bt_fanhui;
+    private ListView fxjcd_lv_item;
+    private Button fxjcd_bt_add;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)  {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_huo_zheng);
-
+        setContentView(R.layout.activity_fxjcdadd);
         mConotext = this;
+     
         findview();
-        hzqe_bt_add.setOnClickListener(this);
-        showItem();
 
-        hzqe_lv_item.setOnItemClickListener(this);
+        showItem();
+        fxjcd_bt_add.setOnClickListener(this);
+        fxjcd_lv_item.setOnItemClickListener(this);
 
 //        传递Bomb返回的list数据
 
@@ -50,17 +53,17 @@ public class HuoZhengActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void showItem() {
-      BmobQuery<HZQEBean> bmobQuery=new BmobQuery<>();
+        BmobQuery<FXJCDBean> bmobQuery=new BmobQuery<>();
 
-        bmobQuery.findObjects(new FindListener<HZQEBean>() {
+        bmobQuery.findObjects(new FindListener<FXJCDBean>() {
             @Override
-            public void done(List<HZQEBean> list, BmobException e) {
+            public void done(List<FXJCDBean> list, BmobException e) {
                 if(e!=null){
                     Toast.makeText(mConotext,"加载数据失败"+e.getMessage(),Toast.LENGTH_LONG).show();
                 }else {
-                    hzqe_lv_item.setAdapter(new MyHZQEAdapter(list));
+                    fxjcd_lv_item.setAdapter(new MyHZQEAdapter(list));
 
-                    HuoZhengActivity.list=list;
+                   FXJCDActivity.list=list;
                 }
 
             }
@@ -70,43 +73,42 @@ public class HuoZhengActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void findview() {
-        hzqe_lv_item = (ListView) findViewById(R.id.hzqe_lv_item);
-        hzqe_bt_add = (Button) findViewById(R.id.hzqe_bt_add);
+        fxjcd_lv_item = (ListView) findViewById(R.id.fxjcd_lv_item);
+        fxjcd_bt_add = (Button) findViewById(R.id.fxjcd_bt_add);
 
     }
 
     @Override
     public void onClick(View v) {
-    switch (v.getId()){
+        switch (v.getId()){
 //       添加企业
-        case R.id.hzqe_bt_add:
-            Intent intent=new Intent(this, HZQEAddActivity.class);
-            startActivity(intent);
-            finish();
-            break;
+            case R.id.fxjcd_bt_add:
+                Intent intent=new Intent(this, FXJCDAddActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 
-        default:
-            break;
-    }
+            default:
+                break;
+        }
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-      Intent intent=new Intent(HuoZhengActivity.this, HZQEAlertActivity.class);
+        Intent intent=new Intent(mConotext, FXJCDAllertActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("xinxi",list.get(position));
         intent.putExtras(bundle);
-        finish();
         startActivity(intent);
-
+        finish();
     }
 
-    class MyHZQEAdapter extends BaseAdapter{
+    class MyHZQEAdapter extends BaseAdapter {
 
 
-        private final List<HZQEBean> list;
+        private final List<FXJCDBean> list;
 
-        public MyHZQEAdapter(List<HZQEBean> list)  {
+        public MyHZQEAdapter(List<FXJCDBean> list)  {
             this.list=list;
         }
 
@@ -142,3 +144,4 @@ public class HuoZhengActivity extends AppCompatActivity implements View.OnClickL
 
 
 }
+

@@ -25,20 +25,23 @@
         <activity android:name=".DaoHangActivity" />
         <activity android:name=".HuoZhengActivity" />
         <activity android:name=".ShiPingXiangGuanActivity" />
-        <activity android:name=".FaLvFaGuiActivity" />
+        <activity android:name=".ZLXCActivity" />
         <activity android:name=".hzqe.HZQEAddActivity" />
         <activity android:name=".hzqe.HZQEAlertActivity" />
         <activity android:name=".GYQYActivity" />
         <activity android:name=".gyqy.GYQYAddActivity" />
         <activity android:name=".gyqy.GYQYQueryActivity" />
         <activity android:name=".gyqy.GYQYAlertActivity" />
-        <activity android:name=".BZGFActivity" />
-        <activity android:name=".bzgf.CPBZActivity" />
-        <activity android:name=".bzgf.XCActivity" />
-        <activity android:name=".bzgf.JDCCActivity" />
-        <activity android:name=".bzgf.ShowItemActivity" />
         <activity android:name=".spxg.SPXGAddActivity" />
         <activity android:name=".spxg.SPXGAlertActivity" />
+        <activity android:name=".ZLTSActivity" />
+        <activity android:name=".zlts.FXJCDAllertActivity" />
+        <activity android:name=".ShowItemActivity" />
+        <activity android:name=".zlts.JDJCActivity" />
+        <activity android:name=".zlts.FXJCDActivity" />
+        <activity android:name=".zlts.FXJCDAddActivity" />
+        <activity android:name=".zlts.JDJCAddActivity" />
+        <activity android:name=".zlts.JDJCAlertActivity"></activity>
     </application>
 
 </manifest>
