@@ -132,7 +132,7 @@ public class JDJCActivity extends AppCompatActivity implements View.OnClickListe
                 view=new TextView(mConotext);
             }
             view.setText(list.get(position).getDate()+"  "+list.get(position).getName());
-            view.setTextSize(30);
+            view.setTextSize(20);
 
             return view;
         }

@@ -58,10 +58,8 @@ public class GYQYActivity extends AppCompatActivity implements View.OnClickListe
                 }else {
                     
                     gyqy_lv_item.setAdapter(new MyHZQEAdapter(list));
-
                     GYQYActivity.list=list;
                 }
-
             }
         });
     }

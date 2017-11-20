@@ -93,7 +93,7 @@
         <Button
             android:layout_gravity="bottom"
             android:id="@+id/jdjcalert_bt_save"
-            android:text="保存添加"
+            android:text="保存修改"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button

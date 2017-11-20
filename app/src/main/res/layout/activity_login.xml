@@ -8,8 +8,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:layout_marginTop="100dp"
-    tools:context="com.example.administrator.jianguanxitong.Login">
+android:gravity="center_vertical"
+    tools:context="com.example.administrator.jianguanxitong.Login"
+   android:background="#FFFAFA">
 
     <LinearLayout
         android:layout_width="match_parent"
