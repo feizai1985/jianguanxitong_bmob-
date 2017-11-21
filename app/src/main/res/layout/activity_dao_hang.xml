@@ -11,12 +11,16 @@
     android:layout_margin="20dp"
     tools:context="com.example.administrator.jianguanxitong.DaoHangActivity">
 
+
     <Button
         android:id="@+id/bt_hzqy"
+
         android:text="获证企业"
         android:textSize="40sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
     <Button
         android:paddingTop="20dp"
         android:id="@+id/bt_gyqy"

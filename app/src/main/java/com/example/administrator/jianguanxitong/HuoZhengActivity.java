@@ -134,7 +134,8 @@ public class HuoZhengActivity extends AppCompatActivity implements View.OnClickL
                 view=new TextView(mConotext);
             }
             view.setText(list.get(position).getName());
-            view.setTextSize(30);
+            view.setTextSize(25);
+
 
             return view;
         }
